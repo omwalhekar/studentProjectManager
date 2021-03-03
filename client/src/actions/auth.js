@@ -21,7 +21,7 @@ export const login = (email, password) => async dispatch => {
     });
   } catch (err) {
     const errors = err.response.data.errors;
-    dispatch(setAlert(errors[0].msg, "danger"));
+    if (errors) dispatch(setAlert(errors[0].msg, "danger"));
   }
 };
 
