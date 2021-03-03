@@ -2,4 +2,3 @@ node_modules
 client/node_modules
 .env
 default.json
-/config/default.json
