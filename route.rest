@@ -1,0 +1,198 @@
+###
+//Get all Projects
+GET http://localhost:5000/Projects
+
+###
+//Get all Projects in department
+GET http://localhost:5000/Projects/IT
+
+
+###
+//Get all Projects of a subject in department
+GET http://localhost:5000/Projects/CS/ML
+
+
+###
+//Get a single Project
+GET http://localhost:5000/Projects/5faf77e8fd873f3ca80b5faa
+
+
+###
+//Add a Project
+POST http://localhost:5000/Projects
+Content-Type: application/json
+
+{
+    "projTitle":"Project Management System11",
+    "projDescription":"This is a project to maintain all other projects",
+    "projDomain":"none",
+    "dept":"MECH",
+    "year":"TE",
+    "subject": "SOM",
+    "projRepo":"www.google.com",
+    "projLink":"www.google.com",
+    "members": "5faf7e46c0307b3ca0d6bd06",
+    "images":[] 
+}
+
+###
+//Delete a Project
+DELETE  http://localhost:5000/Projects/5fcc6a0ade481f3b481eaf27
+
+
+////////////////////ROUTES FOR MEMBERS///////////////////
+
+###
+//Get Members using membersID
+GET http://localhost:5000/Members/5faf7e46c0307b3ca0d6bd06
+
+###
+//Add members
+POST http://localhost:5000/Members
+Content-Type: application/json
+
+[{
+    "name":"Omkar Walhekar",
+    "year":"TE",
+    "rollNo":"173",
+    "dept":"IT",
+    "erp":"18021041i04916"
+},
+{
+    "name":"Ashwini Tanpure",
+    "year":"TE",
+    "rollNo":"174",
+    "dept":"IT",
+    "erp":"18021041i04917"
+},
+{
+    "name":"Abhijit Unavne",
+    "year":"TE",
+    "rollNo":"175",
+    "dept":"IT",
+    "erp":"18021041i04918"
+},
+{
+    "name":"Ajinkya Tilekar",
+    "year":"TE",
+    "rollNo":"176",
+    "dept":"IT",
+    "erp":"18021041i04919"
+}]
+
+
+////////////////Routes for departments/////////////////////////
+###
+//GET
+//Get all departments
+//public
+GET  http://localhost:5000/Dept
+
+###
+//POST
+//Add a department
+//admin
+POST http://localhost:5000/Dept
+Content-Type: application/json
+
+{
+    "name": "MECH",
+    "subjects": []
+}
+
+###
+//DELETE
+//delete a department
+//admin
+DELETE   http://localhost:5000/Dept/5fcc6a0cde481f3b481eaf29
+
+
+
+
+
+//////////////SUBJECT API CALLS/////////////////////////
+###
+//Get all subjects
+GET http://localhost:5000/Subjects
+
+###
+//Get all subjects using dept name
+GET http://localhost:5000/Subjects/IT
+
+###
+//POST
+//add a subject
+//admin
+POST http://localhost:5000/Subjects
+Content-Type: application/json
+
+{
+    "name": "DBMS",
+    "projects": ["5fc52907558a482bb0f2b336", "5fc529ed558a482bb0f2b337"]
+}
+
+
+###
+//DELETE
+//delete a subject
+//admin
+DELETE   http://localhost:5000/Subjects/5fcc6a0bde481f3b481eaf28
+
+
+
+
+###
+GET http://localhost:5000/Dept
+###
+GET http://localhost:5000/Subjects
+###
+GET http://localhost:5000/Projects
+
+
+
+###
+//Get all Projects in department
+GET http://localhost:5000/Projects/CS
+
+
+###
+//Get all Projects of a subject in department
+GET http://localhost:5000/projects/MECH/SOM
+
+###
+//Get all subjects using dept name
+GET http://localhost:5000/Subjects/CS
+
+###
+//Get filtered projects
+GET http://localhost:5000/projects/2027/ad/1/asd
+
+
+###
+//ADMIN ROUTES
+POST http://localhost:5000/admins
+Content-Type: application/json
+
+{
+	"email" : "omwalhekar159@gmail.com",
+	"password" : "thisisme"
+}
+
+###
+//ADMIN LOGIN
+POST http://localhost:5000/auth
+Content-Type: application/json
+
+
+{
+	"email" : "omwalhekar159@gmail.com",
+	"password" : "thisise"
+}
+
+
+###
+//GET ALL ADMINS
+GET http://localhost:5000/admins
+
+###
+GET http://localhost:5000/auth/omwalhekar6@gmail.com

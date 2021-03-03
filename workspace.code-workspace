@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "DBMS Ready",
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
