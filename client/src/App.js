@@ -31,7 +31,7 @@ function App() {
               <Route exact path="/projectspage" component={Projects}></Route>
               <Route
                 exact
-                path="/subjects/:dept"
+                path="/getsubjects/:dept"
                 component={SubjectWise}></Route>
               <Route exact path="/filter" component={FilteredProjects}></Route>
               <Route exact path="/addproject" component={ProjectForm}></Route>
