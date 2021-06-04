@@ -30,6 +30,9 @@ const Login = ({ login, isAuthenticated, alert }) => {
       {!isAuthenticated ? (
         <div className="login">
           <h2 className="form-heading">Admin Login</h2>
+          <p>(Only admin possess the right to delete & edit projects)</p>
+          <br />
+          <br />
           <form className="login-form" onSubmit={onSubmit}>
             <label for="project-title">Email</label>
             <input
